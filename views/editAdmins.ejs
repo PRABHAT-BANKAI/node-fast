@@ -1,0 +1,88 @@
+<%- include("header") %>
+
+
+<div class="card">
+  <form class="form-horizontal" action="/updateAdmin" method="post" enctype="multipart/form-data">
+    <div class="card-body">
+      <h4 class="card-title">Edit update</h4>
+      <div class="form-group row">
+        <label
+          for="fname"
+          class="col-sm-3 text-end control-label col-form-label"
+          >First Name</label
+        >
+        <div class="col-sm-9">
+          <input type="hidden" value="<%= getAdmin.id %>" name="id">
+          <input
+            type="text"
+            class="form-control"
+            id="fname"
+            placeholder="user Name Here"
+            name="userName"
+            value="<%= getAdmin.userName %>"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          for="lname"
+          class="col-sm-3 text-end control-label col-form-label"
+          >Email</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="lname"
+            placeholder="Last Name Here"
+            name="email"
+            value="<%= getAdmin.email %>"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          for="lname"
+          class="col-sm-3 text-end control-label col-form-label"
+          >Password</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="password"
+            class="form-control"
+            id="lname"
+            placeholder="Password Here"
+            name="password"
+            value="<%= getAdmin.password %>"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label
+          for="email1"
+          class="col-sm-3 text-end control-label col-form-label"
+          >Image</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="file"
+            class="form-control"
+            id="email1"
+            placeholder="Company Name Here"
+            name="image"
+          />
+          <img src="<%= getAdmin.image  %>" alt="" height="150px">
+        </div>
+      </div>
+    </div>
+    <div class="border-top">
+      <div class="card-body">
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<%- include("footer") %>
